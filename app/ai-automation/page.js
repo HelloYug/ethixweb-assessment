@@ -1,0 +1,15 @@
+import Link from 'next/link';
+import { Icon } from '@/components/icons';
+
+export const metadata = { title: 'AI & Automation', description: 'Practical AI agents, copilots and workflows for Indian teams that want more consistency without losing the human handoff.' };
+
+const capabilities = [['Custom AI agents', 'Domain-trained agents for support, sales and operations, with boundaries the team can understand.'], ['Workflow automation', 'Connect tools, inboxes, spreadsheets and CRM steps so repetitive work moves with less manual effort.'], ['Internal copilots', 'Make approved business knowledge easier to find, use and keep current across a growing team.'], ['Conversational UX', 'Chat, voice and multimodal interfaces that route the right request to the right person.']];
+
+export default function AiAutomationPage() {
+  return <main id="main-content">
+     <section className="page-hero"><div className="container"><p className="eyebrow">AI & automation / India</p><h1 className="display">Software that thinks. <em>Workflows that scale.</em></h1><p className="lead">Production-minded AI that quietly improves how a business answers, qualifies, routes and learns, with a person still in the loop when it matters.</p><div className="hero-actions"><Link className="button button-primary" href="/contact?service=ai">Automate a hard process <Icon name="arrowUpRight" size={17} /></Link><Link className="button button-secondary" href="/services#ai">See the full AI catalog <Icon name="arrow" size={17} /></Link></div></div></section>
+    <section className="section section-tight"><div className="container"><div className="automation-rail"><article><span>01</span><strong>AI receptionist</strong><small>Answers and qualifies leads</small></article><article><span>02</span><strong>CRM handoff</strong><small>Creates records and tasks</small></article><article><span>03</span><strong>Operations signal</strong><small>Reports actions in real time</small></article></div></div></section>
+    <section className="section"><div className="container"><div className="section-heading"><p className="eyebrow">Core capabilities</p><h2>Automation with a job to do.</h2><p>Practical AI for Indian teams that need useful outcomes, clear governance and a human escalation path.</p></div><div className="grid-4">{capabilities.map(([title, text], index) => <article className="card spotlight-card" data-cursor="INSPECT" key={title}><p className="card-index">0{index + 1}</p><span className="capability-mark" aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="section dark-band"><div className="container split"><div className="section-heading" style={{ marginBottom: 0 }}><p className="eyebrow">The guardrail</p><h2>Useful automation should make people better at the work.</h2></div><div className="card"><p>We design the knowledge source, the escalation rules, the data handoff and the moments where a person must step in. No black box promises; a clear operating system instead.</p><Link className="card-link" href="/contact?service=ai">Talk through a process</Link></div></div></section>
+  </main>;
+}

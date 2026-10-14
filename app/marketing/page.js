@@ -1,0 +1,15 @@
+import Link from 'next/link';
+import { Icon } from '@/components/icons';
+
+export const metadata = { title: 'Social Growth', description: 'India-aware social media strategy, content and campaigns connected to real business actions.' };
+
+const services = [['Content creation', 'Clear, useful creative tailored to the brand, the platform and the audience context.'], ['Engagement tracking', 'Monitor interactions across channels and use the pattern to improve the next message.'], ['Paid campaigns', 'Data-informed campaigns that test demand, audiences and creative without promising guaranteed results.'], ['Flexible plans', 'A focused rhythm that can scale with the business instead of forcing a long contract before learning what works.']];
+
+export default function MarketingPage() {
+  return <main id="main-content">
+     <section className="page-hero"><div className="container"><p className="eyebrow">Social growth / India</p><h1 className="display">Drive engagement and growth with <em>useful social.</em></h1><p className="lead">Strategy, content and measurement under one roof, shaped for the platforms, languages and buying journeys your audience already uses.</p><div className="hero-actions"><Link className="button button-primary" href="/contact?service=growth">Plan social growth <Icon name="arrowUpRight" size={17} /></Link><Link className="button button-secondary" href="/services#growth">Browse growth services <Icon name="arrow" size={17} /></Link></div></div></section>
+    <section className="section"><div className="container split"><div className="section-heading" style={{ marginBottom: 0 }}><p className="eyebrow">What we do</p><h2>Strategy. Content. Conversion.</h2><p>A strong social presence is useful when it makes the brand easier to remember, trust and act on. We connect creative decisions to the business question underneath them.</p></div><div className="card"><p className="card-index">INDIA / SIGNAL</p><h3>Build the message around the moment.</h3><p>Regional nuance, mobile-first creative, seasonal buying patterns and fast feedback loops belong in the plan from day one.</p></div></div></section>
+    <section className="section dark-band"><div className="container"><div className="section-heading"><p className="eyebrow">The social system</p><h2>More than posting. Less than noise.</h2></div><div className="grid-4">{services.map(([title, text], index) => <article className="card" key={title}><p className="card-index">0{index + 1}</p><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="section"><div className="container"><div className="cta-panel"><p className="eyebrow">Ready to grow on social?</p><h2>Tell us what should be easier to find.</h2><p className="muted" style={{ margin: 0 }}>We will come back with a focused, no-jargon route to better visibility and more useful conversations.</p><Link className="button button-primary" href="/contact?service=growth">Get a focused plan <Icon name="arrowUpRight" size={17} /></Link></div></div></section>
+  </main>;
+}
